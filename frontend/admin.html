@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Admin</h1>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="#" id="logout">Déconnexion</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="login-form" class="login-box">
+      <h2>Connexion Admin</h2>
+      <input type="text" id="admin-user" placeholder="Nom d'utilisateur">
+      <input type="password" id="admin-pass" placeholder="Mot de passe">
+      <button class="btn-primary" onclick="login()">Se connecter</button>
+    </div>
+
+    <div id="admin-panel" class="hidden">
+      <h2>Commandes</h2>
+      <div id="commandes-list"></div>
+
+      <h2 style="margin-top:2rem;">Gestion du menu</h2>
+      <form id="add-plat-form" class="order-form">
+        <input type="text" id="plat-nom" placeholder="Nom" required>
+        <input type="text" id="plat-desc" placeholder="Description">
+        <input type="number" id="plat-prix" placeholder="Prix" step="0.01" required>
+        <input type="text" id="plat-cat" placeholder="Catégorie" required>
+        <input type="text" id="plat-img" placeholder="Emoji" maxlength="2">
+        <button type="submit" class="btn-primary">Ajouter</button>
+      </form>
+      <div id="plats-admin" style="margin-top:1rem;"></div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

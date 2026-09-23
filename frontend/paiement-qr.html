@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement QR Code</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/qr.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Mon Restaurant</h1>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="panier.html">🛒 Panier</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="paiement-container">
+      <h2>📱 Paiement par QR Code</h2>
+      <p style="text-align:center; color:#666; margin-bottom:2rem;">
+        Choisissez votre opérateur puis scannez le QR code
+      </p>
+
+      <div id="recap-commande" class="recap-commande"></div>
+
+      <div class="operateurs">
+        <button class="operateur-card" data-op="Nita">
+          <div class="op-logo nita">N</div>
+          <div class="op-nom">Nita</div>
+        </button>
+        <button class="operateur-card" data-op="Amana">
+          <div class="op-logo amana">A</div>
+          <div class="op-nom">Amana</div>
+        </button>
+        <button class="operateur-card" data-op="Wave">
+          <div class="op-logo wave">W</div>
+          <div class="op-nom">Wave</div>
+        </button>
+      </div>
+
+      <div id="qr-zone" class="qr-zone hidden">
+        <div class="qr-container">
+          <img id="qr-image" src="" alt="QR Code">
+        </div>
+
+        <div class="qr-details">
+          <div class="qr-detail-line">
+            <span>📞 Numéro</span>
+            <strong id="qr-numero"></strong>
+          </div>
+          <div class="qr-detail-line">
+            <span>💰 Montant</span>
+            <strong id="qr-montant"></strong>
+          </div>
+        </div>
+
+        <form id="form-reference" class="form-reference">
+          <h3>✅ Confirmer votre paiement</h3>
+          <label>Référence de transaction *</label>
+          <input type="text" id="reference" placeholder="Ex: TXN123456" required>
+          <label>Notes (optionnel)</label>
+          <input type="text" id="notes" placeholder="Ex: payé depuis 96...">
+          <button type="submit" class="btn-primary">Confirmer</button>
+        </form>
+      </div>
+
+      <div id="confirmation-finale" class="confirmation-finale hidden"></div>
+    </div>
+  </main>
+
+  <script src="js/paiement-qr.js"></script>
+</body>
+</html>

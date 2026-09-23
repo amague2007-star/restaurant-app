@@ -1,0 +1,133 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #f5f5f5; color: #333; }
+
+header {
+  background: #d32f2f; color: white; padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky; top: 0; z-index: 100;
+}
+header nav a {
+  color: white; text-decoration: none; margin-left: 1.5rem;
+  font-weight: 500;
+}
+main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35, #d32f2f);
+  color: white; padding: 3rem 2rem; border-radius: 12px; margin-bottom: 2rem;
+}
+
+.filtres { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center; }
+.filtre {
+  padding: 0.6rem 1.2rem; border: 2px solid #d32f2f; background: white;
+  color: #d32f2f; border-radius: 25px; cursor: pointer; font-weight: 500;
+}
+.filtre.active, .filtre:hover { background: #d32f2f; color: white; }
+
+.menu-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem;
+}
+.plat-card {
+  background: white; border-radius: 12px; padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column;
+}
+.plat-emoji { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+.plat-nom { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; }
+.plat-desc { color: #666; font-size: 0.9rem; margin-bottom: 1rem; flex: 1; }
+.plat-prix { font-size: 1.3rem; color: #d32f2f; font-weight: bold; margin-bottom: 1rem; }
+
+.btn-primary {
+  background: #d32f2f; color: white; border: none; padding: 0.75rem 1.5rem;
+  border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600;
+}
+.btn-primary:hover { background: #b71c1c; }
+
+#cart-items { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+.cart-line {
+  display: flex; justify-content: space-between; padding: 0.75rem 0;
+  border-bottom: 1px solid #eee; align-items: center;
+}
+.cart-total { font-size: 1.5rem; font-weight: bold; text-align: right; color: #d32f2f; margin-top: 1rem; }
+
+.order-form {
+  background: white; padding: 2rem; border-radius: 12px;
+  display: flex; flex-direction: column; gap: 1rem; max-width: 500px;
+}
+.order-form input, .login-box input {
+  padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;
+}
+.confirmation-finale {
+  background: #e8f5e9; border-left: 4px solid #4caf50;
+  padding: 1.5rem; border-radius: 8px; margin-top: 1rem;
+}
+.hidden { display: none; }
+
+.login-box {
+  background: white; padding: 2rem; border-radius: 12px;
+  max-width: 400px; margin: 3rem auto;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.commande-card {
+  background: white; padding: 1.5rem; border-radius: 12px;
+  margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.statut {
+  display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px;
+  font-size: 0.85rem; font-weight: 600;
+}
+.statut.en_attente { background: #fff3e0; color: #e65100; }
+.statut.paiement_en_attente { background: #fff3e0; color: #e65100; }
+.statut.en_preparation { background: #e3f2fd; color: #1565c0; }
+.statut.livree { background: #e8f5e9; color: #2e7d32; }
+
+.paiement-container {
+  max-width: 700px; margin: 2rem auto; background: white;
+  padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.paiement-container h2 { text-align: center; margin-bottom: 2rem; color: #d32f2f; }
+
+.recap-commande { background: #f9f9f9; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+.recap-ligne { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+.recap-total {
+  display: flex; justify-content: space-between; font-size: 1.3rem;
+  font-weight: bold; color: #d32f2f; padding-top: 1rem;
+  margin-top: 0.5rem; border-top: 2px solid #d32f2f;
+}
+
+.operateurs {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-bottom: 2rem;
+}
+.operateur-card {
+  background: white; border: 2px solid #eee; border-radius: 12px;
+  padding: 1.5rem; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+}
+.operateur-card:hover, .operateur-card.selected {
+  border-color: #d32f2f; background: #fff5f5;
+}
+.op-logo {
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; font-weight: bold; color: white;
+}
+.op-logo.nita { background: linear-gradient(135deg, #ff6b35, #d32f2f); }
+.op-logo.amana { background: linear-gradient(135deg, #2196f3, #1565c0); }
+.op-logo.wave { background: linear-gradient(135deg, #00d4ff, #0084ff); }
+.op-nom { font-weight: 600; font-size: 1.1rem; }
+
+.form-reference {
+  display: flex; flex-direction: column; gap: 0.75rem;
+  background: #f9f9f9; padding: 1.5rem; border-radius: 12px;
+}
+.form-reference label { font-weight: 600; font-size: 0.9rem; }
+.form-reference input { padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+
+.num-commande { font-size: 2.5rem; font-weight: bold; color: #d32f2f; margin: 1rem 0; text-align: center; }
+
+@media (max-width: 600px) {
+  header { flex-direction: column; gap: 1rem; }
+  .operateurs { grid-template-columns: 1fr; }
+}

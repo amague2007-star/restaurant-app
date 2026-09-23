@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Restaurant - Commande en ligne</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Mon Restaurant</h1>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="panier.html">🛒 Panier (<span id="cart-count">0</span>)</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Commandez en ligne, c'est simple et rapide !</h2>
+      <p>Livraison rapide 🚴</p>
+    </section>
+
+    <div class="filtres">
+      <button class="filtre active" data-cat="all">Tout</button>
+      <button class="filtre" data-cat="Pizza">🍕 Pizza</button>
+      <button class="filtre" data-cat="Burger">🍔 Burger</button>
+      <button class="filtre" data-cat="Pâtes">🍝 Pâtes</button>
+      <button class="filtre" data-cat="Salade">🥗 Salade</button>
+      <button class="filtre" data-cat="Dessert">🍰 Dessert</button>
+      <button class="filtre" data-cat="Boisson">🥤 Boisson</button>
+    </div>
+
+    <div id="menu-grid" class="menu-grid"></div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

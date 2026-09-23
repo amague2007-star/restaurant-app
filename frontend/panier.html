@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Panier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Mon Restaurant</h1>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="panier.html">🛒 Panier</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="margin-bottom:1rem;">Votre Panier</h2>
+    <div id="cart-items"></div>
+
+    <form id="order-form" class="order-form">
+      <h3>Vos coordonnées</h3>
+      <input type="text" id="nom" placeholder="Nom complet" required>
+      <input type="tel" id="tel" placeholder="Téléphone" required>
+      <input type="text" id="adresse" placeholder="Adresse de livraison" required>
+      
+      <div style="display:flex; gap:1rem; margin-top:0.5rem;">
+        <label style="flex:1; cursor:pointer; border:2px solid #eee; padding:1rem; border-radius:8px; text-align:center;">
+          <input type="radio" name="mode-paiement" value="qr" checked> 📱 QR Code
+        </label>
+        <label style="flex:1; cursor:pointer; border:2px solid #eee; padding:1rem; border-radius:8px; text-align:center;">
+          <input type="radio" name="mode-paiement" value="manuel"> ✍️ Manuel
+        </label>
+      </div>
+
+      <button type="submit" class="btn-primary">Continuer vers le paiement</button>
+    </form>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
