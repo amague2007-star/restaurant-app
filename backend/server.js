@@ -19,14 +19,16 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 // ==================== AUTH ADMIN ====================
 app.post('/api/login', (req, res) => {
-  const { username, password } = req.body;
-  db.get("SELECT * FROM admins WHERE username = ?", [username], async (err, admin) => {
-    if (!admin) return res.status(401).json({ error: 'Identifiants invalides' });
-    const ok = await bcrypt.compare(password, admin.password);
-    if (!ok) return res.status(401).json({ error: 'Identifiants invalides' });
-    const token = jwt.sign({ id: admin.id }, SECRET, { expiresIn: '24h' });
-    res.json({ token });
-  });
+    const { username, password } = req.body;
+    
+    // Vérification en dur pour la production
+    if (username === 'admin' && password === '12345678') {
+        const token = jwt.sign({ id: 1 }, SECRET, { expiresIn: '1h' });
+        return res.json({ token });
+    }
+    
+    return res.status(401).json({ error: 'Identifiants invalides' });
+});
 });
 
 app.post('/api/register-admin', async (req, res) => {
