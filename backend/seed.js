@@ -4,7 +4,7 @@ const path = require('path');
 
 const dbPath = path.join(__dirname, 'database.db'); 
 const db = new sqlite3.Database(dbPath);
-
+const dbPath = path.join(__dirname, 'restaurant.db');
 db.serialize(async () => {
     db.run(`CREATE TABLE IF NOT EXISTS admins (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
