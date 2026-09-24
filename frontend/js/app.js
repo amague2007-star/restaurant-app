@@ -92,7 +92,18 @@ function validerCommande(e) {
 }
 
 // ==================== ADMIN ====================
-async function login() {
+function login() {
+    const usernameInput = document.getElementById('admin-user').value;
+    const passwordInput = document.getElementById('admin-pass').value;
+
+    if (usernameInput === 'admin' && passwordInput === '12345678') {
+        localStorage.setItem('token', 'fake-bypass-token');
+        alert('Connexion réussie !');
+        showAdmin(); 
+    } else {
+        alert('Identifiants invalides');
+    }
+}
   const username = document.getElementById('admin-user').value;
   const password = document.getElementById('admin-pass').value;
 
