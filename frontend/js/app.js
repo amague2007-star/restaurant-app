@@ -99,7 +99,7 @@ function login() {
     if (usernameInput === 'admin' && passwordInput === '12345678') {
         localStorage.setItem('token', 'fake-bypass-token');
         alert('Connexion réussie !');
-        showAdmin(); 
+      window.location.href = 'admin.html';
     } else {
         alert('Identifiants invalides');
     }
