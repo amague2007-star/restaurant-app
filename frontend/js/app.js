@@ -104,20 +104,6 @@ async function login() {
         alert('Identifiants invalides');
     }
 }
-  const username = document.getElementById('admin-user').value;
-  const password = document.getElementById('admin-pass').value;
-
-  const res = await fetch(`${API}/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, password })
-  });
-
-  if (!res.ok) return alert('Identifiants invalides');
-  const { token } = await res.json();
-  localStorage.setItem('token', token);
-  showAdmin();
-}
 
 function showAdmin() {
   const token = localStorage.getItem('token');
