@@ -92,7 +92,7 @@ function validerCommande(e) {
 }
 
 // ==================== ADMIN ====================
-function login() {
+async function login() {
     const usernameInput = document.getElementById('admin-user').value;
     const passwordInput = document.getElementById('admin-pass').value;
 
